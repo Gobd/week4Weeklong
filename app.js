@@ -9,20 +9,21 @@ $stateProvider
       'templateUrl': '/components/home/homeView.html',
   })
   .state('quiz', {
-      'url': '/quiz',
-      'controller': 'quizCtrl',
-      'templateUrl': '',
+      url: '/quiz/:quizName',
+      templateUrl: 'components/quiz/views/quizContainerView.html',
+      controller: 'quizCtrl'
   })
   .state('quiz.view', {
-      'url': '/quizView',
-      'controller': 'quizCtrl',
-      'templateUrl': '',
-  })
-  .state('results', {
-      'url': '/results',
-      'controller': 'resultsCtrl',
-      'templateUrl': '/components/results/resultsView.html',
-  });
+    parent: 'quiz',
+    views: {
+        'list': {
+            templateUrl: 'components/quiz/views/questionListWrapperView.html'
+        },
+        'detail': {
+            templateUrl: 'components/quiz/views/questionDetailView.html'
+        }
+    }
+});
 
   $urlRouterProvider.otherwise('/');
 

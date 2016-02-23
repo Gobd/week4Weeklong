@@ -1,0 +1,18 @@
+<div id="mainHome">
+
+  <div id="topHome">
+      <div id="chooseQuiz">Choose a quiz!</div>
+      <div ng-repeat="quiz in quizzes">
+        <a ng-class-odd="'odd'" ng-class-even="'even'" ui-sref="quiz.view({quizName: quiz.quizName})">{{quiz.quizName | uppercase}}</a>
+      </div>
+  </div>
+
+  <div id="bottomHome">
+      <div id="viewPastQuizzes">View Past Quizzes</div>
+        <div ng-repeat="(key, value) in array">
+          <div class="pastQuizName">{{key}}</div>
+          <div class="pastQuizQuizzes">quiz.name.quizzes</div>
+        </div>
+  </div>
+
+</div>

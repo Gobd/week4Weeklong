@@ -1,0 +1,98 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0px;
+  height: 100%;
+}
+header {
+  height: 100px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  border-bottom: 4px solid #FAD251;
+}
+.headerLink {
+  text-decoration: none;
+  color: #00BDFC;
+  font-size: 120%;
+}
+#mainHome {
+  margin: auto;
+  width: 70%;
+}
+#topHome {
+  height: 350px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#bottomHome {
+  height: 350px;
+  background-color: #FAD251;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#chooseQuiz {
+  color: white;
+  font-size: 300%;
+}
+.even {
+  text-decoration: none;
+  font-size: 110%;
+  color: #00BDFC;
+}
+.odd {
+  text-decoration: none;
+  font-size: 110%;
+  color: #FAD251;
+}
+#viewPastQuizzes {
+  font-size: 300%;
+}
+.pastQuizName {
+  font-size: 110%;
+}
+.pastQuizQuizzes {
+  font-size: 110%;
+  color: white;
+}
+.quizContainer {
+  width: 100%;
+}
+.list {
+  color: white;
+  background-color: black;
+  width: 50%;
+  float: left;
+  height: 89vh;
+  padding: 25px;
+  border-right: 4px solid #FAD251;
+}
+.detail {
+  padding: 25px;
+  background-color: #E4E4E4;
+  width: 50%;
+  float: right;
+  height: 89vh;
+}
+button {
+  background-color: #FAD251;
+  border: 2px solid #E6B300;
+  height: 25px;
+  margin-right: 10px;
+}
+h2 {
+  margin: 0px;
+}
+.bold {
+  font-weight: bolder;
+}
