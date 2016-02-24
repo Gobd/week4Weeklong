@@ -8,7 +8,7 @@
       </div>
     </div>
     <br />
-    <button class="saveBtn" ng-click="saveAnswer(choice)"> Save and Continue </button>
+    <button ng-disabled="isDisabled" class="saveBtn" ng-click="saveAnswer(choice)"> Save and Continue </button>
   </div>
 </div>
 <!-- fill in the blank -->
@@ -20,9 +20,9 @@
 
     <br />
     <form ng-submit="saveAnswer(answer2)">
-    <input type="text" placeholder="Your answer here" ng-model="answer2"/>
+    <input ng-change="isDisabled = false" type="text" placeholder="Your answer here" ng-model="answer2"/>
   </form>
     <br />
-    <button class="saveBtn" ng-click="saveAnswer(answer2)"> Save and Continue </button>
+    <button ng-disabled="isDisabled" class="saveBtn" ng-click="saveAnswer(answer2)"> Save and Continue </button>
   </div>
 </div>

@@ -4,13 +4,32 @@ angular.module('quizApp').service('quizService', function($q){
 
   this.checkMyAnswers = function(questions, answers){
     var defer = $q.defer();
+    console.log(questions);
+    console.log(answers);
     var right = 0;
     var wrong = 0;
       for (var i =0; i<questions.length; i++) {
-        if (answers[i+1] === questions[i].choices[questions[i].correct]) {
-          right ++;
-        } else {wrong ++;}
+        if(questions[i].qtype === 'multiple') {
+          if (answers[i+1] === questions[i].choices[questions[i].correct]) {
+            console.log('right' + answers[i+1]);
+            console.log('right' + questions[i].choices[questions[i].correct]);
+            right ++;
+          } else {
+            console.log(answers[i+1]);
+            console.log(questions[i].choices[questions[i].correct]);
+            wrong ++;}
+        } else {
+          if (questions[i].correct === answers[i+1]) {
+            console.log('right' + questions[i].correct);
+            console.log('right' + answers[i+1]);
+            right ++;
+          } else {
+            console.log(questions[i].correct);
+            console.log(answers[i+1]);
+            wrong ++;}
+        }
       }
+      console.log({right: right, wrong: wrong});
       defer.resolve({right: right, wrong: wrong});
       return defer.promise;
 
@@ -64,7 +83,7 @@ angular.module('quizApp').service('quizService', function($q){
             },
             {
                 id: 4,
-                title: 'DOM manipulation should be performed in an angular directive? (T/F)',
+                title: 'DOM? (T/F)',
                 qtype: 'multiple',
                 choices: ['T', 'F'],
                 correct: 0

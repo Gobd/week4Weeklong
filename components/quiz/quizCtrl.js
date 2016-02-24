@@ -18,19 +18,23 @@ angular.module('quizApp').controller('quizCtrl', function ($scope, quizService, 
     }
   };
 
-  $scope.checkMyAnswers = function () {
-    quizService.checkMyAnswers($scope.questions, $scope.answers).then(function (response) {
+  $scope.checkMyAnswers = function (questions, answers) {
+    quizService.checkMyAnswers(questions, answers).then(function (response) {
       $scope.results = response;
     });
   };
 
+  $scope.isDisabled = true;
+
 $scope.update = function(choice){
   $scope.choice = choice;
+  $scope.isDisabled = false;
 };
 
   $scope.saveAnswer = function (ans) {
     $scope.answers[$scope.currentQuestion.id] = ans;
     $scope.nextQuestion();
+    $scope.isDisabled = true;
   };
 
   $scope.reset = function () {
